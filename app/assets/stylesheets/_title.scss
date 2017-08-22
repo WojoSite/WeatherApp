@@ -1,0 +1,14 @@
+$title-font: 'Lobster', cursive;
+
+#title{
+  position: relative;
+  margin: 30px auto 0 auto;
+  height: 60px;
+  text-align: center;
+  // border: 1px solid black;
+  span{
+    line-height: 60px;
+    font-size: 40px;
+    font-family: $title-font;
+  }
+}
