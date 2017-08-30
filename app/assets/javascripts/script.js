@@ -7,6 +7,7 @@ $(document).ready(function($) {
     startEventListeners: function(){
       $('#submit-button').on("click", WeatherApp.getWeatherInfo);
     },
+    // Weather Underground API call
     getWeatherInfo: function(){
       var url = "/weather_call";
       var zip_code = $('#zip-input').val();
@@ -30,6 +31,8 @@ $(document).ready(function($) {
         console.log("*** ajax error ***");
       });
     },
+
+    // Display WUnderground results
     displayResults: function(x){
       $('#display-zip-input').val(x.weather.location.zip);
       if ($('#display-zip-input').val() == x.weather.location.zip) {
@@ -49,6 +52,8 @@ $(document).ready(function($) {
       $('#result-container').fadeIn(1000);
       $('#display-submit-button').on("click", WeatherApp.refreshWeatherInfo);
     },
+
+    // Refresh results
     refreshWeatherInfo: function(){
       $('#display-submit-button').off("click");
       WeatherApp.currentZip = null;
